@@ -19,6 +19,14 @@ import ajaxCaller from '../../general/ajax-caller.js';
 import PropTypes from 'prop-types';
 
 class LoginLink extends Component {
+    constructor(props) {
+        super(props);
+
+        // bind allows 'this' object reference
+        this.handleClicked = this.handleClicked.bind(this);
+        this.render = this.render.bind(this);
+    }
+
     // prob validation: static method, similar to class A {}; A.b = {};
     static propTypes = {
         dispatchLogout: PropTypes.func,
